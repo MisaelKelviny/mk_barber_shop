@@ -67,8 +67,8 @@ export function ScheduleProvider({
   async function schedule() {
     if (!user?.email) return;
 
-    await httpPost("agendamentos", {
-      emailClient: user.email,
+    await httpPost("schedules", {
+      clientEmail: user.email,
       date: date,
       professional: professional!,
       services: services,

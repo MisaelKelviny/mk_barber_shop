@@ -5,7 +5,7 @@ export default function ScheduleWithSuccess() {
   return (
     <>
       <Image
-        src="/schedule.png"
+        src="/agendamento.png"
         width={400}
         height={400}
         alt="Agendado com Sucesso"

@@ -14,7 +14,7 @@ export default function Summary() {
     try {
       setLoading(true);
       await schedule();
-      router.push("/schedule/sucesso");
+      router.push("/agendamento/sucesso");
     } finally {
       setLoading(false);
     }

@@ -41,7 +41,7 @@ function Option(props: {
 export default function ProfessionalInput(
   props: Readonly<ProfessionalInputProps>
 ) {
-  const { profissionais } = useProfissionais();
+  const { professionals } = useProfissionais();
 
   return (
     <div className="flex flex-col gap-5">
@@ -49,7 +49,7 @@ export default function ProfessionalInput(
         Profissionais Disponíveis
       </span>
       <div className="grid grid-cols-2 md:grid-cols-3 self-start gap-5">
-        {profissionais.map((professional: any) => (
+        {professionals.map((professional: any) => (
           <Option
             key={professional.id}
             professional={professional}

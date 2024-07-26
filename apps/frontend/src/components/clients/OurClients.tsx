@@ -15,7 +15,7 @@ export default function OurClients() {
       id: client.id,
       content: <ClientItem name={client.name} comments={client.comments} />,
       className: classes[i],
-      thumbnail: client.imagemURL,
+      thumbnail: client.imageURL,
     };
   });
 

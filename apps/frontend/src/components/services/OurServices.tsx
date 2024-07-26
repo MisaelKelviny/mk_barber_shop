@@ -10,7 +10,7 @@ export default function OurServices() {
   const { services } = useServicos();
 
   function startSchedule() {
-    router.push("/schedule");
+    router.push("/agendamento");
   }
 
   return (
