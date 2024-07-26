@@ -1,6 +1,6 @@
 "use client";
-import { Servico } from "@barba/core";
-import { useServicos } from "@barba/ui";
+import { Servico } from "@barber/core";
+import { useServicos } from "@barber/ui";
 import { useRouter } from "next/navigation";
 import Titulo from "../shared/Titulo";
 import ServicoItem from "./ServicoItem";

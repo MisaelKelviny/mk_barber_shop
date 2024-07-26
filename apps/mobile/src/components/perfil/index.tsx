@@ -1,5 +1,5 @@
 import useUsuario from "@/src/data/hooks/useUsuario";
-import { TelefoneUtils } from "@barba/core";
+import { TelefoneUtils } from "@barber/core";
 import React from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 

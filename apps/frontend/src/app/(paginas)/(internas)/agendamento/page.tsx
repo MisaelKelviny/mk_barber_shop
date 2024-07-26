@@ -6,7 +6,7 @@ import Sumario from "@/components/schedule/Sumario";
 import Cabecalho from "@/components/shared/Cabecalho";
 import Passos from "@/components/shared/Passos";
 import useAgendamento from "@/data/hooks/useAgendamento";
-import { Profissional, Servico } from "@barba/core";
+import { Profissional, Servico } from "@barber/core";
 import { useState } from "react";
 
 export default function PaginaAgendamento() {

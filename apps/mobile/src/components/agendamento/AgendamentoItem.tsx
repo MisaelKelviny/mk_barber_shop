@@ -1,4 +1,4 @@
-import { Agendamento } from "@barba/core";
+import { Agendamento } from "@barber/core";
 import { StyleSheet, Text, View } from "react-native";
 
 interface AgendamentoItemProps {

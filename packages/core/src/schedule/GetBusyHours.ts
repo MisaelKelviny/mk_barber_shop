@@ -14,7 +14,7 @@ export default class GetBusyHours {
         return {
           data: schedule.date,
           slots: schedule.services.reduce(
-            (total, s) => total + s.slotQuantity,
+            (total, s) => total + s.slotsQuantity,
             0
           ),
         };

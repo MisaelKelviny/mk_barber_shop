@@ -1,7 +1,7 @@
 "use client";
 import Logo from "@/components/shared/Logo";
 import useUsuario from "@/data/hooks/useUsuario";
-import { TelefoneUtils } from "@barba/core";
+import { TelefoneUtils } from "@barber/core";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";

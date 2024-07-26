@@ -1,5 +1,5 @@
 import Titulo from "@/components/shared/Titulo";
-import { clientes } from "@barba/core";
+import { clientes } from "@barber/core";
 import { LayoutGrid } from "../ui/layout-grid";
 import ClienteItem from "./ClienteItem";
 

@@ -1,4 +1,4 @@
-import { services } from "@barba/core";
+import { services } from "@barber/core";
 
 export default function useServicos() {
   return {

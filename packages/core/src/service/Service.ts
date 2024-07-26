@@ -3,6 +3,6 @@ export default interface Service {
   name: string;
   description: string;
   price: number;
-  slotQuantity: number;
+  slotsQuantity: number;
   imageUrl: string;
 }

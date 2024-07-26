@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { DbModule } from './db/db.module';
-import { AgendamentoModule } from './schedule/schedule.module';
-import { ServicoModule } from './servico/servico.module';
+import { ScheduleModule } from './schedule/schedule.module';
+import { ServiceModule } from './service/service.module';
 
 @Module({
-  imports: [DbModule, ServicoModule, AgendamentoModule],
+  imports: [DbModule, ServiceModule, ScheduleModule],
   controllers: [],
   providers: [],
 })

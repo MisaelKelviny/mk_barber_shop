@@ -1,17 +1,17 @@
-import { profissionais, services } from '@barba/core';
+import { professionals, services } from '@barber/core';
 import { PrismaClient } from '@prisma/client';
 import {
-  Profissional as PrismaProfissional,
-  Servico as PrismaServico,
+  Professional as PrismaProfessional,
+  Service as PrismaServices,
 } from 'prisma/prisma-client';
 
 const prisma = new PrismaClient();
 
 async function seed() {
   await prisma.professional.createMany({
-    data: profissionais as PrismaProfissional[],
+    data: professionals as PrismaProfessional[],
   });
-  await prisma.servico.createMany({ data: services as PrismaServico[] });
+  await prisma.service.createMany({ data: services as PrismaServices[] });
 }
 
 seed();

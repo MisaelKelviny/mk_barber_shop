@@ -1,5 +1,5 @@
 import useUsuario from "@/src/data/hooks/useUsuario";
-import { Agendamento } from "@barba/core";
+import { Agendamento } from "@barber/core";
 import React, { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import useAPI from "../../data/hooks/useAPI";

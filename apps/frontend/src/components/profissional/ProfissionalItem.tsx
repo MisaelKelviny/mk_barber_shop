@@ -1,4 +1,4 @@
-import { Profissional } from "@barba/core";
+import { Profissional } from "@barber/core";
 import {
   IconBrandInstagram,
   IconBrandLinkedin,

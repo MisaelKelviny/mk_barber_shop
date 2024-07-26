@@ -1,4 +1,4 @@
-import { DataUtils } from "@barba/core";
+import { DataUtils } from "@barber/core";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import useAgendamento from "../data/hooks/useAgendamento";
 

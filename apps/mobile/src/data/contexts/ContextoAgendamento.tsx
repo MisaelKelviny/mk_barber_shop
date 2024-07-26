@@ -1,4 +1,4 @@
-import { DataUtils, Profissional, Servico } from "@barba/core";
+import { DataUtils, Profissional, Servico } from "@barber/core";
 import { createContext, useCallback, useEffect, useState } from "react";
 import useAPI from "../hooks/useAPI";
 import useUsuario from "../hooks/useUsuario";

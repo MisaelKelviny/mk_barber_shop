@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import useUsuario from "@/data/hooks/useUsuario";
-import { Usuario } from "@barba/core";
+import { Usuario } from "@barber/core";
 import Image from "next/image";
 
 export interface MenuUsuarioProps {

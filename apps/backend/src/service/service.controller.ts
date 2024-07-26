@@ -1,12 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
 import { PrismaService } from 'src/db/prisma.service';
 
-@Controller('servico')
-export class ServicoController {
+@Controller('service')
+export class ServiceController {
   constructor(private readonly prisma: PrismaService) {}
 
   @Get()
-  buscarTodos() {
-    return this.prisma.servico.findMany();
+  getAll() {
+    return this.prisma.service.findMany();
   }
 }

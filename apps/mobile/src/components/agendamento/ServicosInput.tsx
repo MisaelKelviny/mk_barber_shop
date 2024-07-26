@@ -1,5 +1,5 @@
-import { Servico } from "@barba/core";
-import { useServicos } from "@barba/ui";
+import { Servico } from "@barber/core";
+import { useServicos } from "@barber/ui";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import imagens from "../../data/constants/imagens";
 

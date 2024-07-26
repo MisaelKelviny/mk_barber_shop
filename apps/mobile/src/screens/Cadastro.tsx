@@ -1,4 +1,4 @@
-import { TelefoneUtils } from "@barba/core";
+import { TelefoneUtils } from "@barber/core";
 import React, { useEffect } from "react";
 import {
   Image,

@@ -1,15 +1,15 @@
-import { Agendamento } from '@barba/core';
+import { Schedule } from '@barber/core';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/db/prisma.service';
 
 @Injectable()
-export class ScheduleRepository implements RepositorySchedule {
+export class ScheduleRepository implements ScheduleRepository {
   constructor(private readonly prismaService: PrismaService) {}
 
-  async criar(schedule: Agendamento): Promise<void> {
+  async create(schedule: Schedule): Promise<void> {
     await this.prismaService.schedule.create({
       data: {
-        data: schedule.data,
+        date: schedule.date,
         clientEmail: schedule.clientEmail,
         professional: { connect: { id: schedule.professional.id } },
         services: {
@@ -19,11 +19,11 @@ export class ScheduleRepository implements RepositorySchedule {
     });
   }
 
-  async buscarPorEmail(email: string): Promise<Agendamento[]> {
+  async searchForEmail(email: string): Promise<Schedule[]> {
     return this.prismaService.schedule.findMany({
       where: {
         clientEmail: email,
-        data: {
+        date: {
           gte: new Date(),
         },
       },
@@ -32,28 +32,28 @@ export class ScheduleRepository implements RepositorySchedule {
         professional: true,
       },
       orderBy: {
-        data: 'desc',
+        date: 'desc',
       },
     });
   }
 
-  async buscarPorProfissionalEData(
+  async searchForProfessionalAndDate(
     professional: number,
-    data: Date,
-  ): Promise<Agendamento[]> {
-    const ano = data.getFullYear();
-    const mes = data.getUTCMonth();
-    const dia = data.getUTCDate();
+    date: Date,
+  ): Promise<Schedule[]> {
+    const year = date.getFullYear();
+    const month = date.getUTCMonth();
+    const day = date.getUTCDate();
 
-    const inicioDoDia = new Date(ano, mes, dia, 0, 0, 0);
-    const fimDoDia = new Date(ano, mes, dia, 23, 59, 59);
+    const startDay = new Date(year, month, day, 0, 0, 0);
+    const endDay = new Date(year, month, day, 23, 59, 59);
 
     const resultado: any = await this.prismaService.schedule.findMany({
       where: {
-        profissionalId: professional,
-        data: {
-          gte: inicioDoDia,
-          lte: fimDoDia,
+        professionalId: professional,
+        date: {
+          gte: startDay,
+          lte: endDay,
         },
       },
       include: { services: true },

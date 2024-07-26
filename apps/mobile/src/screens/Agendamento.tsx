@@ -1,4 +1,4 @@
-import { Profissional, Servico } from "@barba/core";
+import { Profissional, Servico } from "@barber/core";
 import { useState } from "react";
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import DataInput from "../components/schedule/DataInput";
