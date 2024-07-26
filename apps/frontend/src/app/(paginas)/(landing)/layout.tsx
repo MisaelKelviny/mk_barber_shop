@@ -1,6 +1,6 @@
-'use client'
-import Pagina from '@/components/shared/Pagina'
+"use client";
+import Page from "@/components/shared/PAge";
 
 export default function Layout(props: any) {
-    return <Pagina>{props.children}</Pagina>
+  return <Page>{props.children}</Page>;
 }

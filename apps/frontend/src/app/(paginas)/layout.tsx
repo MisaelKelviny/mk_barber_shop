@@ -1,6 +1,7 @@
-'use client'
-import { ProvedorUsuario } from '@/data/contexts/ContextoUsuario'
+"use client";
+
+import { UserProvider } from "@/data/contexts/UserContext";
 
 export default function Layout({ children }: any) {
-    return <ProvedorUsuario>{children}</ProvedorUsuario>
+  return <UserProvider>{children}</UserProvider>;
 }

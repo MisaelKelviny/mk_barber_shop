@@ -1,14 +1,15 @@
-'use client'
-import { ProvedorAgendamento } from '@/data/contexts/ContextoAgendamento'
-import ForcarUsuario from '@/components/shared/ForcarUsuario'
-import Pagina from '@/components/shared/Pagina'
+"use client";
+
+import ForceUsers from "@/components/shared/ForceUsers";
+import Page from "@/components/shared/PAge";
+import { ScheduleProvider } from "@/data/contexts/ScheduleContext";
 
 export default function Layout(props: any) {
-    return (
-        <ForcarUsuario>
-            <ProvedorAgendamento>
-                <Pagina>{props.children}</Pagina>
-            </ProvedorAgendamento>
-        </ForcarUsuario>
-    )
+  return (
+    <ForceUsers>
+      <ScheduleProvider>
+        <Page>{props.children}</Page>
+      </ScheduleProvider>
+    </ForceUsers>
+  );
 }

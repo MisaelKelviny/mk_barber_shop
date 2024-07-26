@@ -1,50 +1,49 @@
 "use client";
-import DataInput from "@/components/schedule/DataInput";
-import ProfissionalInput from "@/components/schedule/ProfissionalInput";
-import ServicosInput from "@/components/schedule/ServicosInput";
-import Sumario from "@/components/schedule/Sumario";
-import Cabecalho from "@/components/shared/Cabecalho";
-import Passos from "@/components/shared/Passos";
-import useAgendamento from "@/data/hooks/useAgendamento";
-import { Profissional, Servico } from "@barber/core";
+import DateInput from "@/components/schedules/DateInput";
+import ProfessionalInput from "@/components/schedules/ProfessionalInput";
+import ServicesInput from "@/components/schedules/ServicesInput";
+import Summary from "@/components/schedules/Summary";
+import Headers from "@/components/shared/Headers";
+import Steps from "@/components/shared/Steps";
+import useSchedule from "@/data/hooks/useSchedule";
+import { Professional, Service } from "@barber/core";
 import { useState } from "react";
 
-export default function PaginaAgendamento() {
-  const [permiteProximoPasso, setPermiteProximoPasso] =
-    useState<boolean>(false);
+export default function PageSchedule() {
+  const [allowNextStep, setAllowNextStep] = useState<boolean>(false);
   const {
     professional,
     services,
-    data,
-    selecionarProfissional,
-    selecionarServicos,
-    selecionarData,
-    quantidadeDeSlots,
-  } = useAgendamento();
+    date,
+    selectProfessional,
+    selectServices,
+    selectDate,
+    slotsQuantity,
+  } = useSchedule();
 
-  function profissionalMudou(professional: Profissional) {
-    selecionarProfissional(professional);
-    setPermiteProximoPasso(!!professional);
+  function professionalChange(professional: Professional) {
+    selectProfessional(professional);
+    setAllowNextStep(!!professional);
   }
 
-  function servicosMudou(services: Servico[]) {
-    selecionarServicos(services);
-    setPermiteProximoPasso(services.length > 0);
+  function serviceChange(services: Service[]) {
+    selectServices(services);
+    setAllowNextStep(services.length > 0);
   }
 
-  function dataMudou(data: Date) {
-    selecionarData(data);
+  function dateChange(data: Date) {
+    selectDate(data);
 
     const temData = data;
     const horaValida = data.getHours() >= 8 && data.getHours() <= 21;
-    setPermiteProximoPasso(temData && horaValida);
+    setAllowNextStep(temData && horaValida);
   }
 
   return (
     <div className="flex flex-col bg-zinc-900">
-      <Cabecalho
-        titulo="Agendamento de Serviços"
-        descricao="Seja atendido exatamente no horário marcado."
+      <Headers
+        title="Agendamento de Serviços"
+        description="Seja atendido exatamente no horário marcado."
       />
       <div
         className="
@@ -53,27 +52,27 @@ export default function PaginaAgendamento() {
                     gap-10 lg:gap-0 py-10
                 "
       >
-        <Passos
-          permiteProximoPasso={permiteProximoPasso}
-          permiteProximoPassoMudou={setPermiteProximoPasso}
+        <Steps
+          allowNextStep={allowNextStep}
+          allowNextStepChange={setAllowNextStep}
           labels={[
             "Selecione o professional",
             "Informe os serviços",
             "Escolha o horário",
           ]}
         >
-          <ProfissionalInput
+          <ProfessionalInput
             professional={professional}
-            profissionalMudou={profissionalMudou}
+            professionalChange={professionalChange}
           />
-          <ServicosInput services={services} servicosMudou={servicosMudou} />
-          <DataInput
-            data={data}
-            dataMudou={dataMudou}
-            quantidadeDeSlots={quantidadeDeSlots()}
+          <ServicesInput services={services} servicesChange={serviceChange} />
+          <DateInput
+            date={date}
+            dateChange={dateChange}
+            slotsQuantity={slotsQuantity()}
           />
-        </Passos>
-        <Sumario />
+        </Steps>
+        <Summary />
       </div>
     </div>
   );

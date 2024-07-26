@@ -1,25 +1,21 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import Logo from './Logo'
-import MenuUsuario from './MenuUsuario'
-import useUsuario from '@/data/hooks/useUsuario'
+import useUsers from "@/data/hooks/useUsers";
+import Link from "next/link";
+import Logo from "./Logo";
+import MenuUser from "./MenuUser";
 
 export default function MenuSuperior() {
-    const { usuario } = useUsuario()
+  const { user } = useUsers();
 
-    return (
-        <header className="self-stretch flex justify-center items-center h-24 bg-black/60">
-            <nav className="flex items-center justify-between container">
-                <Logo />
-                <div>
-                    {usuario ? (
-                        <MenuUsuario usuario={usuario} />
-                    ) : (
-                        <Link href="/entrar">Entrar</Link>
-                    )}
-                </div>
-            </nav>
-        </header>
-    )
+  return (
+    <header className="self-stretch flex justify-center items-center h-24 bg-black/60">
+      <nav className="flex items-center justify-between container">
+        <Logo />
+        <div>
+          {user ? <MenuUser user={user} /> : <Link href="/entrar">Entrar</Link>}
+        </div>
+      </nav>
+    </header>
+  );
 }
