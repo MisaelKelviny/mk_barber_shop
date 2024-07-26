@@ -33,7 +33,7 @@ export default function TitleSlogan() {
             🤘 Seu estilo é o nosso rock! 🤘
           </p>
           <Link
-            href="/schedule"
+            href="/agendamento"
             className="
                             bg-gradient-to-r from-green-500 to-green-600
                             text-white font-semibold text-base md:text-lg
